@@ -47,7 +47,7 @@ if [ ! -f /palworld/Pal/Saved/Config/LinuxServer/PalWorldSettings.ini ]; then
     printf "\e[0;32m*****GENERATING CONFIG*****\e[0m\n"
 
     # Server will generate all ini files after first run.
-    /home/steam/steamcmd/steam.sh -c "timeout --preserve-status 15s ./PalServer.sh"
+    timeout --preserve-status 15s ./PalServer.sh
 
     # Wait for shutdown
     sleep 5
@@ -65,4 +65,4 @@ fi
 
 printf "\e[0;32m*****STARTING SERVER*****\e[0m\n"
 echo "${STARTCOMMAND}"
-/home/steam/steamcmd/steam.sh -c "${STARTCOMMAND}"
+${STARTCOMMAND}
